@@ -19,8 +19,16 @@ table {
 }
 
 img {
-  height: 1000px;
+  height: 500px;
   width: auto;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
 }
 
 iframe {
@@ -44,7 +52,7 @@ body {
 }
 
 #button {
-  font-size: 50px;
+  font-size: 25px;
   color: rgb(255, 255, 255);
   border: 3px solid rgb(255, 255, 255);
   text-align: center;
@@ -53,7 +61,7 @@ body {
 }
 
 #input {
-  font-size: 50px;
+  font-size: 25px;
   color: rgb(255, 255, 255);
   border: 2px solid rgb(255, 255, 255);
   text-align: center;
