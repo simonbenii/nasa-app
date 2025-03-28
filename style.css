@@ -193,6 +193,12 @@ body {
   iframe {
     height: 45vw; /* Adjust iframe height for smaller screens */
   }
+
+  img {
+    max-height: 300px; /* Adjust image size on smaller screens */
+    width: 100%; /* Make sure the image is fluid */
+    object-fit: contain; /* Optional: Ensure the whole image is visible */
+  }
 }
 
 @media (max-width: 480px) {
@@ -218,6 +224,6 @@ body {
   }
 
   img {
-    max-height: 400px; /* Limit image height on very small screens */
+    max-height: 250px; /* Limit image height on very small screens */
   }
 }
