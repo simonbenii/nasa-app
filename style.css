@@ -1,3 +1,4 @@
+/* Universal reset */
 body,
 body *,
 body *::before,
@@ -9,82 +10,214 @@ body *::after {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
-  font-family: inherit;
+  font-family: "Montserrat", sans-serif;
   background-color: rgb(0, 0, 0);
-}
-
-html {
-  background-image: url('https://wallpapercave.com/wp/wp2717178.jpg');
+  background-image: url("https://wallpapercave.com/wp/wp2717178.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
+/* Table styling */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+/* Image styling */
 img {
-  height: 500px;
-  width: auto;
+  height: auto;
+  max-height: 500px; /* Limit maximum height */
+  border-radius: 10px; /* Rounded corners for images */
+  object-fit: cover; /* Cover the container */
+  transition: transform 0.3s ease-in-out; /* Smooth zoom on hover */
 }
 
+img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Header styling */
 h2 {
-  font-size: 40px;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9); /* Slight transparency for better contrast */
+  margin: 20px 0;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
+/* Paragraph styling */
 p {
-  font-size: 20px;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
 }
 
+/* iframe styling */
 iframe {
   position: relative;
   overflow: hidden;
-  height: 600px;
-  width: 1066px;
+  height: 60vw; /* Responsive height */
+  width: 100%;
   max-width: 100%;
+  max-height: 600px;
+  border-radius: 8px; /* Smooth corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-[readonly]+span,
+/* Make readonly elements non-interactive */
+[readonly] + span,
 [readonly] {
   pointer-events: none;
-  opacity: .4;
+  opacity: 0.4;
 }
 
+/* Body styling */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   color: rgb(255, 255, 255);
+  line-height: 1.6;
+  padding: 10px 10px;
 }
 
+/* Button styling */
 #button {
-  font-size: 25px;
+  font-size: 1.5rem;
   color: rgb(255, 255, 255);
   border: 3px solid rgb(255, 255, 255);
-  text-align: center;
+  padding: 12px 30px;
   cursor: pointer;
-  color: inherit;
+  transition: all 0.3s ease;
+  border-radius: 5px; /* Rounded corners */
 }
 
+#button:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+/* Input styling */
 #input {
-  font-size: 25px;
+  font-size: 1.5rem;
   color: rgb(255, 255, 255);
   border: 2px solid rgb(255, 255, 255);
-  text-align: center;
-  cursor: pointer;
-  color: inherit;
+  padding: 12px;
+  width: 100%;
+  max-width: 400px; /* Limit width */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
+#input:focus {
+  outline: none;
+  background-color: rgba(15, 157, 88, 0.1);
+}
+
+/* Textarea styling */
 #textarea {
   height: 115px;
-  font-size: 40px;
+  font-size: 2rem;
   text-align: center;
+  padding: 15px;
+  width: 100%;
+  max-width: 500px; /* Limit width */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  transition: all 0.3s ease;
 }
 
+#textarea:focus {
+  outline: none;
+  background-color: rgba(15, 157, 88, 0.1);
+}
+
+/* Result text styling */
 #result {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: rgb(255, 255, 255);
   margin: 20px;
+  font-weight: bold;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  #button,
+  #input {
+    font-size: 1.25rem;
+  }
+
+  #textarea {
+    font-size: 1.75rem;
+  }
+
+  #result {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  #button,
+  #input {
+    font-size: 1rem;
+  }
+
+  #textarea {
+    font-size: 1.5rem;
+  }
+
+  #result {
+    font-size: 1.5rem;
+  }
+
+  iframe {
+    height: 45vw; /* Adjust iframe height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  #button,
+  #input {
+    font-size: 1rem;
+  }
+
+  #textarea {
+    font-size: 1.25rem;
+  }
+
+  #result {
+    font-size: 1.25rem;
+  }
+
+  img {
+    max-height: 400px; /* Limit image height on very small screens */
+  }
 }
